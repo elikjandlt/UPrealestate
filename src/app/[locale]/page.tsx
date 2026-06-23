@@ -13,11 +13,11 @@ export default function Home() {
     <>
       <HeroSection />
       <SearchBar />
-      <PartnersSection />
       <FeaturedListingsSection />
       <WhyUsSection />
       <HowItWorksSection />
       <TopAgentsSection />
+      <PartnersSection />
       <TestimonialsSection />
       <CtaSection />
     </>
