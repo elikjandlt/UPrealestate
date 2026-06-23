@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { Search, SlidersHorizontal, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { districts, getProperties } from "@/lib/mock";
@@ -12,17 +13,29 @@ const PAGE_SIZE = 6;
 
 export default function ListingsPage() {
   const t = useTranslations("listings");
+  const searchParams = useSearchParams();
   const all = getProperties();
 
-  const [sell, setSell] = useState(true);
-  const [rent, setRent] = useState(false);
+  const queryType = searchParams.get("type") as "sell" | "rent" | null;
+  const queryDistrict = searchParams.get("district") || "";
+  const queryPrice = searchParams.get("price") || "";
+  const queryRooms = searchParams.get("rooms") as "" | "1" | "2" | "3" | "4+" | null;
+
+  const [sell, setSell] = useState(queryType ? queryType === "sell" : true);
+  const [rent, setRent] = useState(queryType === "rent");
   const [propertyType, setPropertyType] = useState("");
-  const [district, setDistrict] = useState("");
-  const [minPrice, setMinPrice] = useState("");
-  const [maxPrice, setMaxPrice] = useState("");
+  const [district, setDistrict] = useState(queryDistrict);
+  const [minPrice, setMinPrice] = useState(() => {
+    if (queryPrice) return queryPrice.split("-")[0] || "";
+    return "";
+  });
+  const [maxPrice, setMaxPrice] = useState(() => {
+    if (queryPrice) return queryPrice.split("-")[1] || "";
+    return "";
+  });
   const [minArea, setMinArea] = useState("");
   const [maxArea, setMaxArea] = useState("");
-  const [rooms, setRooms] = useState<"" | "1" | "2" | "3" | "4+">("");
+  const [rooms, setRooms] = useState<"" | "1" | "2" | "3" | "4+">(queryRooms || "");
   const [amenities, setAmenities] = useState<Record<string, boolean>>({});
   const [sort, setSort] = useState("newest");
   const [page, setPage] = useState(1);
