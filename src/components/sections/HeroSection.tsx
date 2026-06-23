@@ -18,7 +18,7 @@ export function HeroSection() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-primary/50 to-primary/40" />
       </div>
       <div className="relative z-10 mx-auto max-w-[1440px] px-4 py-20 lg:px-8 xl:px-[120px] lg:py-24">
         <div className="max-w-3xl">
