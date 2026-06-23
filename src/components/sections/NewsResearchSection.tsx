@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/FadeIn";
@@ -37,7 +38,17 @@ export function NewsResearchSection() {
           {items.map((item) => (
             <StaggerItem key={item._id}>
               <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm transition-shadow hover:shadow-md">
-                <div className="h-44 bg-gradient-to-br from-primary/80 to-accent" />
+                <div className="relative h-44 overflow-hidden bg-gradient-to-br from-primary/80 to-accent">
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  ) : null}
+                </div>
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <span className="rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">

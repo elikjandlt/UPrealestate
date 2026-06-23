@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { getNews } from "@/lib/mock";
 import { FadeIn } from "@/components/motion/FadeIn";
@@ -26,7 +27,18 @@ export default async function ResearchDetailPage({ params }: { params: Params })
           </Link>
 
           <article className="mt-6 overflow-hidden rounded-2xl bg-card shadow-sm">
-            <div className="h-64 bg-gradient-to-br from-primary/80 to-accent" />
+            <div className="relative h-64 overflow-hidden bg-gradient-to-br from-primary/80 to-accent">
+              {item.image ? (
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  sizes="900px"
+                  priority
+                />
+              ) : null}
+            </div>
             <div className="p-6 md:p-10">
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <span className="rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">

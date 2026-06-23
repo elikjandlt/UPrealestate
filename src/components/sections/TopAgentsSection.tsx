@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Phone } from "lucide-react";
 import { StaggerContainer, StaggerItem, HoverCard } from "@/components/motion/FadeIn";
@@ -24,8 +25,18 @@ export function TopAgentsSection() {
                   href={`/agents/${agent.slug}`}
                   className="block rounded-2xl bg-card p-8 text-center shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-muted">
-                    <Phone className="h-10 w-10 text-muted-foreground/40" />
+                  <div className="relative mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-muted">
+                    {agent.image ? (
+                      <Image
+                        src={agent.image}
+                        alt={agent.name}
+                        fill
+                        className="object-cover"
+                        sizes="96px"
+                      />
+                    ) : (
+                      <Phone className="h-10 w-10 text-muted-foreground/40" />
+                    )}
                   </div>
                   <h3 className="mt-4 text-xl font-semibold text-card-foreground">{agent.name}</h3>
                   <p className="mt-1 text-sm font-medium text-primary">{agent.specialization}</p>

@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import { Phone, Mail, Award, TrendingUp } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
+import Image from "next/image";
 import { getAgents } from "@/lib/mock";
 import { Link } from "@/i18n/navigation";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/FadeIn";
@@ -26,8 +27,18 @@ export default async function AgentsPage() {
                 className="block rounded-2xl bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-muted">
-                    <Phone className="h-7 w-7 text-muted-foreground/40" />
+                  <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted">
+                    {agent.image ? (
+                      <Image
+                        src={agent.image}
+                        alt={agent.name}
+                        fill
+                        className="object-cover"
+                        sizes="64px"
+                      />
+                    ) : (
+                      <Phone className="h-7 w-7 text-muted-foreground/40" />
+                    )}
                   </div>
                   <div>
                     <h2 className="text-xl font-semibold text-card-foreground">{agent.name}</h2>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/motion/FadeIn";
@@ -7,8 +8,19 @@ export function HeroSection() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-[1440px] px-4 py-20 lg:px-8 xl:px-[120px] lg:py-24">
+    <section className="relative overflow-hidden bg-primary text-primary-foreground">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80"
+          alt="Up properties hero"
+          fill
+          className="object-cover opacity-20"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/70" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-[1440px] px-4 py-20 lg:px-8 xl:px-[120px] lg:py-24">
         <div className="max-w-3xl">
           <FadeIn>
             <h1 className="text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl">

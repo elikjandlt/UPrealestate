@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Phone, Mail, MapPin, Award, TrendingUp } from "lucide-react";
+import Image from "next/image";
 import { getAgentBySlug, getProperties } from "@/lib/mock";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { PropertyCard } from "@/components/PropertyCard";
@@ -25,8 +26,18 @@ export default async function AgentDetailPage({ params }: Props) {
         <FadeIn>
           <div className="rounded-2xl bg-card p-6 shadow-sm md:p-8 lg:p-10">
             <div className="flex flex-col gap-6 md:flex-row md:items-center">
-              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-muted">
-                <Phone className="h-10 w-10 text-muted-foreground/40" />
+              <div className="relative flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted">
+                {agent.image ? (
+                  <Image
+                    src={agent.image}
+                    alt={agent.name}
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
+                ) : (
+                  <Phone className="h-10 w-10 text-muted-foreground/40" />
+                )}
               </div>
               <div className="flex-1">
                 <h1 className="text-3xl font-bold text-card-foreground">{agent.name}</h1>

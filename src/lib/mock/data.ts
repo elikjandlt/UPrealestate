@@ -14,6 +14,7 @@ export const properties = [
     propertyType: "apartment",
     badges: ["Зарах", "Verified", "Эрэлт их"],
     amenities: ["Паркинг", "Лифт"],
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
     description:
       "Сүхбаатар дүүрэгт байрлалтай, бүрэн тавилгатай 2 өрөө орон сууц зарна. Гэрэлтүүлэг сайтай, цонхны хараа сайн. Ойролцоо сургууль, цэцэрлэг, дэлгүүр байрладаг.",
     demand: "Эрэлт их",
@@ -33,6 +34,7 @@ export const properties = [
     propertyType: "apartment",
     badges: ["Зарах", "Verified"],
     amenities: ["Балконтой", "Лифт"],
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
     description:
       "Баянзүрх дүүрэгт орон сууц зарна. 3 өрөө, 95 м² талбайтай. Дулаахан, дуу чимээ багатай, гражтай.",
     demand: "Дундаж",
@@ -52,6 +54,7 @@ export const properties = [
     propertyType: "house",
     badges: ["Зарах", "Verified", "Эрэлт их"],
     amenities: ["Паркинг", "Балконтой"],
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
     description:
       "Зайсан толгойн дүүрэгт амины байр зарна. 5 өрөө, 280 м², том граж, хашаа талбайтай.",
     demand: "Эрэлт их",
@@ -71,6 +74,7 @@ export const properties = [
     propertyType: "office",
     badges: ["Зарах", "Verified"],
     amenities: ["Лифт"],
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
     description:
       "Чингэлтэй дүүрэгт оффисын зориулалттай байр зарна. 120 м², лифт, 24/7 хамгаалалт.",
     demand: "Дундаж",
@@ -90,6 +94,7 @@ export const properties = [
     propertyType: "apartment",
     badges: ["Зарах", "Verified", "Эрэлт их"],
     amenities: ["Тавилгатай", "Лифт"],
+    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
     description: "Сүхбаатар дүүрэгт 1 өрөө зөв хэмжээтэй орон сууц зарна.",
     demand: "Бага",
   },
@@ -108,6 +113,7 @@ export const properties = [
     propertyType: "shop",
     badges: ["Түрээс", "Verified"],
     amenities: [],
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
     description: "Баянгол дүүрэгт худалдааны зориулалттай байр түрээслэнэ.",
     demand: "Дундаж",
   },
@@ -125,6 +131,7 @@ export const agents = [
     phone: "+976 9999-1111",
     email: "bold@upproperties.mn",
     bio: "Улаанбаатар хотын орон сууцны зах зээлийн мэргэжилтэн. 8 жилийн туршлагатай.",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
     locations: ["Сүхбаатар дүүрэг", "Чингэлтэй дүүрэг", "Баянзүрх дүүрэг"],
   },
   {
@@ -138,6 +145,7 @@ export const agents = [
     phone: "+976 9999-2222",
     email: "tsetseg@upproperties.mn",
     bio: "Арилжааны үл хөдлөх хөрөнгийн мэргэжилтэн. Оффис, дэлгүүрийн байрны чиглэлээр 6 жил ажилласан.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
     locations: ["Сүхбаатар дүүрэг", "Чингэлтэй дүүрэг"],
   },
   {
@@ -151,6 +159,7 @@ export const agents = [
     phone: "+976 9999-3333",
     email: "ganbat@upproperties.mn",
     bio: "Luxury үл хөдлөх хөрөнгийн зах зээлийн тэргүүлэх агент. Вилла, амины байрны чиглэлээр 10 жилийн туршлагатай.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
     locations: ["Хан-Уул дүүрэг", "Баянзүрх дүүрэг"],
   },
 ];
@@ -301,6 +310,7 @@ export const news = [
     date: "2025.06.18",
     category: "Зах зээлийн шинжилгээ",
     slug: "ub-apartment-market-2025",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
   },
   {
     _id: "n2",
@@ -310,6 +320,7 @@ export const news = [
     date: "2025.06.10",
     category: "Зөвлөгөө",
     slug: "5-benefits-of-using-agent",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
   },
   {
     _id: "n3",
@@ -319,5 +330,6 @@ export const news = [
     date: "2025.06.05",
     category: "Мэдээ",
     slug: "international-finance-partnership",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80",
   },
 ];

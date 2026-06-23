@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Maximize, BedDouble, Bath } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { HoverCard } from "@/components/motion/FadeIn";
@@ -14,6 +15,7 @@ interface Property {
   area: number;
   floor: string;
   badges: string[];
+  image?: string;
 }
 
 export function PropertyCard({ property }: { property: Property }) {
@@ -23,12 +25,22 @@ export function PropertyCard({ property }: { property: Property }) {
   return (
     <HoverCard className="group h-full">
       <Link href={`/properties/${property.slug}`} className="block h-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md">
-        <div className="relative aspect-[16/10] bg-muted">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="flex h-10 w-10 items-center justify-center rounded-md border-2 border-muted-foreground/30 text-muted-foreground/50">
-              <span className="text-lg font-bold">?</span>
+        <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+          {property.image ? (
+            <Image
+              src={property.image}
+              alt={property.title}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="flex h-10 w-10 items-center justify-center rounded-md border-2 border-muted-foreground/30 text-muted-foreground/50">
+                <span className="text-lg font-bold">?</span>
+              </div>
             </div>
-          </div>
+          )}
           <div className="absolute left-3 top-3 flex flex-wrap gap-2">
             {property.badges.map((badge) => (
               <span

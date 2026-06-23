@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { MapPin, BedDouble, Maximize, Calendar, Phone, Flame } from "lucide-react";
+import Image from "next/image";
 import { getPropertyBySlug } from "@/lib/mock";
 import { Link } from "@/i18n/navigation";
 import { FadeIn } from "@/components/motion/FadeIn";
@@ -48,10 +49,21 @@ export default async function PropertyDetailPage({ params }: Props) {
         <div className="mt-8 grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <FadeIn delay={0.1}>
-              <div className="aspect-[16/10] rounded-2xl bg-muted">
-                <div className="flex h-full w-full items-center justify-center text-muted-foreground">
-                  <Maximize className="h-16 w-16 opacity-20" />
-                </div>
+              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-muted">
+                {property.image ? (
+                  <Image
+                    src={property.image}
+                    alt={property.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    priority
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center text-muted-foreground">
+                    <Maximize className="h-16 w-16 opacity-20" />
+                  </div>
+                )}
               </div>
             </FadeIn>
 
