@@ -16,9 +16,9 @@ export default function Home() {
       <FeaturedListingsSection />
       <WhyUsSection />
       <HowItWorksSection />
-      <InternationalSection />
       <TopAgentsSection />
       <PartnersSection />
+      <InternationalSection />
       <TestimonialsSection />
     </>
   );
