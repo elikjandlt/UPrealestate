@@ -3,6 +3,7 @@ import { Phone, Mail, Award, TrendingUp } from "lucide-react";
 import { getAgents } from "@/lib/mock";
 import { Link } from "@/i18n/navigation";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/FadeIn";
+import { AgentRequestSection } from "@/components/sections/AgentRequestSection";
 
 export default async function AgentsPage() {
   const t = await getTranslations("agents");
@@ -63,6 +64,8 @@ export default async function AgentsPage() {
             </StaggerItem>
           ))}
         </StaggerContainer>
+
+        <AgentRequestSection agents={agents.map((a) => ({ _id: a._id, name: a.name, slug: a.slug }))} />
       </div>
     </div>
   );
