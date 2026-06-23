@@ -47,10 +47,11 @@ export default async function ResearchDetailPage({ params }: { params: Params })
                 <span>{item.date}</span>
               </div>
               <h1 className="mt-4 text-2xl font-bold md:text-4xl">{item.title}</h1>
-              <p className="mt-6 text-base leading-relaxed text-card-foreground">{item.excerpt}</p>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                {t("detailPlaceholder")}
-              </p>
+              <div className="mt-6 space-y-4 text-base leading-relaxed text-card-foreground">
+                {item.content.split("\n\n").map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
+              </div>
             </div>
           </article>
         </FadeIn>
