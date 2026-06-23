@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { districts } from "@/lib/mock";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { FaqSection } from "@/components/sections/FaqSection";
+import { CommissionCalculator } from "@/components/sections/CommissionCalculator";
 
 export default function SellPage() {
   const t = useTranslations("sell");
@@ -239,6 +240,8 @@ export default function SellPage() {
           )}
         </div>
       </div>
+
+      <CommissionCalculator />
 
       <FaqSection />
     </>
