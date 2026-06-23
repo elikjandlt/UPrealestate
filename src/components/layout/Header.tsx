@@ -31,9 +31,9 @@ export function Header() {
           <Image
             src="/logo.webp"
             alt="RE/MAX UP"
-            width={180}
-            height={64}
-            className="h-14 w-auto"
+            width={220}
+            height={80}
+            className="h-18 w-auto"
             priority
           />
         </Link>
