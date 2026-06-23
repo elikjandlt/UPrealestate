@@ -8,6 +8,7 @@ import {
   faqs,
   contactInfo,
   districts,
+  news,
 } from "./data";
 import type { Page, MenuItem } from "@/graphql/cms/queries";
 
@@ -95,6 +96,10 @@ export function getFaqs() {
 
 export function getContactInfo() {
   return contactInfo;
+}
+
+export function getNews() {
+  return news;
 }
 
 export { districts };
