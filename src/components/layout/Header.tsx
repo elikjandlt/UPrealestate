@@ -14,6 +14,7 @@ export function Header() {
   const navItems = [
     { label: t("home"), href: "/" },
     { label: t("listings"), href: "/listings" },
+    { label: t("research"), href: "/research" },
     { label: t("agents"), href: "/agents" },
     { label: t("careers"), href: "/careers" },
     { label: t("contact"), href: "/contact" },
@@ -36,7 +37,7 @@ export function Header() {
           {navItems.map((item) => (
             <Link
               key={item.href}
-              href={item.href as "/" | "/listings" | "/agents" | "/careers" | "/contact"}
+              href={item.href as "/" | "/listings" | "/research" | "/agents" | "/careers" | "/contact"}
               className={cn(
                 "text-[15px] font-medium transition-colors hover:text-primary",
                 isActive(item.href) ? "text-foreground" : "text-muted-foreground"
@@ -71,7 +72,7 @@ export function Header() {
             {navItems.map((item) => (
               <Link
                 key={item.href}
-                href={item.href as "/" | "/listings" | "/agents" | "/careers" | "/contact"}
+                href={item.href as "/" | "/listings" | "/research" | "/agents" | "/careers" | "/contact"}
                 className={cn(
                   "text-base font-medium",
                   isActive(item.href) ? "text-foreground" : "text-muted-foreground"

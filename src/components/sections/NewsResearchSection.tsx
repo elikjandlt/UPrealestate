@@ -24,7 +24,7 @@ export function NewsResearchSection() {
           </div>
           <FadeIn delay={0.2}>
             <Link
-              href="#"
+              href="/research"
               className="group inline-flex items-center gap-2 text-sm font-semibold text-primary"
             >
               {t("viewAll")}
@@ -52,7 +52,7 @@ export function NewsResearchSection() {
                     {item.excerpt}
                   </p>
                   <Link
-                    href={`/news/${item.slug}`}
+                    href={`/research/${item.slug}`}
                     className="group mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary"
                   >
                     {t("readMore")}
