@@ -19,7 +19,7 @@ export function TestimonialsSection() {
           {testimonials.map((item) => (
             <StaggerItem key={item._id}>
               <div className="rounded-xl bg-card p-6 shadow-sm">
-                <p className="text-base leading-relaxed text-card-foreground">"{item.quote}"</p>
+                <p className="text-base leading-relaxed text-card-foreground">&ldquo;{item.quote}&rdquo;</p>
                 <div className="mt-4 flex items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
                     {item.avatar}
