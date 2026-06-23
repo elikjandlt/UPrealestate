@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link, usePathname } from "@/i18n/navigation";
 
@@ -26,11 +27,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur">
       <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-4 lg:px-8 xl:px-[120px]">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary">
-            <Phone className="h-4 w-4 text-primary-foreground" />
-          </div>
-          <span className="text-xl font-bold text-foreground">Up properties</span>
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/logo.webp"
+            alt="RE/MAX UP"
+            width={140}
+            height={48}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
