@@ -14,11 +14,11 @@ export function HeroSection() {
           src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80"
           alt="Up properties hero"
           fill
-          className="object-cover opacity-25"
+          className="object-cover opacity-30"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-primary/50 to-primary/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/50 to-primary/30" />
       </div>
       <div className="relative z-10 mx-auto max-w-[1440px] px-4 py-20 lg:px-8 xl:px-[120px] lg:py-24">
         <div className="max-w-3xl">
