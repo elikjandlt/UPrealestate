@@ -1,8 +1,8 @@
 import { getTranslations } from "next-intl/server";
-import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { getNews } from "@/lib/mock";
+import { Link } from "@/i18n/navigation";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/FadeIn";
 
 export default async function ResearchPage() {
