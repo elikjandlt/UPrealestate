@@ -1,7 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Maximize, BedDouble, Bath } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "@/i18n/navigation";
 import { HoverCard } from "@/components/motion/FadeIn";
 
 interface Property {

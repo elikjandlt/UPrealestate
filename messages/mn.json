@@ -152,9 +152,27 @@
   },
   "property": {
     "details": "Дэлгэрэнгүй",
+    "generalInfo": "Ерөнхий мэдээлэл",
+    "descriptionTitle": "Дэлгэрэнгүй тайлбар",
+    "location": "Байршил",
+    "pricePerSqm": "Нэг м²-ийн үнэ",
+    "rooms": "Өрөө",
+    "bathrooms": "Угаалга",
+    "area": "Талбай",
+    "floor": "Давхар",
+    "yearBuilt": "Баригдсан он",
+    "garage": "Гараж",
+    "condition": "Нөхцөл",
+    "type": "Төрөл",
     "demand": "Эрэлтийн үзүүлэлт",
     "callNow": "Одоо холбогдох",
-    "bookViewing": "Үзлэг захиалах"
+    "bookViewing": "Үзлэг захиалах",
+    "agent": "Агент",
+    "agentCompany": "Агентийн байгууллага",
+    "map": "Газрын зураг",
+    "similar": "Санал болгох",
+    "published": "Нийтэлсэн",
+    "daysAgo": "өдрийн өмнө"
   },
   "agentProfile": {
     "about": "Танилцуулга",
