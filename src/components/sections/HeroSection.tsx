@@ -11,10 +11,10 @@ export function HeroSection() {
     <section className="relative overflow-hidden bg-primary text-primary-foreground">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80"
           alt="Up properties hero"
           fill
-          className="object-cover opacity-20"
+          className="object-cover opacity-25"
           priority
           sizes="100vw"
         />
