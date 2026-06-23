@@ -5,6 +5,7 @@ import { getMessages, getTranslations } from "next-intl/server";
 import ApolloClientProvider from "@/lib/apollo/provider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Chatbot } from "@/components/Chatbot";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -47,6 +48,7 @@ export default async function LocaleLayout({
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
+            <Chatbot />
           </ApolloClientProvider>
         </NextIntlClientProvider>
       </body>
