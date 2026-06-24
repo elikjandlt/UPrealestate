@@ -48,14 +48,20 @@
   --color-destructive: var(--destructive);
   --color-footer: var(--footer);
   --color-footer-foreground: var(--footer-foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-roboto);
+  --font-heading: var(--font-vollkorn);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-vollkorn), Georgia, serif;
+  font-weight: 700;
 }
 
 @media (prefers-reduced-motion: reduce) {

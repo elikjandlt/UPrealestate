@@ -1,24 +1,68 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/motion/FadeIn";
 
+const VIDEO_URL = "https://videos.pexels.com/video-files/37028650/37028650-hd_1920_1080_30fps.mp4";
+const POSTER_URL = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80";
+
 export function HeroSection() {
   const t = useTranslations("hero");
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [canPlay, setCanPlay] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const attemptPlay = async () => {
+      try {
+        await video.play();
+        setCanPlay(true);
+      } catch {
+        setCanPlay(false);
+      }
+    };
+
+    if (video.readyState >= 3) {
+      attemptPlay();
+    } else {
+      video.addEventListener("canplay", attemptPlay, { once: true });
+    }
+  }, []);
 
   return (
     <section className="relative overflow-hidden bg-primary text-primary-foreground">
       <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80"
-          alt="Up properties hero"
-          fill
-          className="object-cover opacity-30"
-          priority
-          sizes="100vw"
+        <video
+          ref={videoRef}
+          src={VIDEO_URL}
+          poster={POSTER_URL}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className={cn(
+            "absolute inset-0 h-full w-full object-cover transition-opacity duration-700",
+            canPlay ? "opacity-100" : "opacity-0"
+          )}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-primary/20 to-primary/10" />
+        <div className={cn("absolute inset-0 transition-opacity duration-700", canPlay ? "opacity-0" : "opacity-100")}>
+          <Image
+            src={POSTER_URL}
+            alt="Up properties hero"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/50 to-primary/30" />
       </div>
       <div className="relative z-10 mx-auto max-w-[1440px] px-4 py-20 lg:px-8 xl:px-[120px] lg:py-24">
         <div className="max-w-3xl">
@@ -53,4 +97,8 @@ export function HeroSection() {
       </div>
     </section>
   );
+}
+
+function cn(...classes: (string | false | undefined)[]) {
+  return classes.filter(Boolean).join(" ");
 }
