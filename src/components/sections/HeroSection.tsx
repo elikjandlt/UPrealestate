@@ -16,7 +16,7 @@ export function HeroSection() {
 
   return (
     <section className="relative overflow-hidden bg-primary text-primary-foreground">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <div
           className={cn(
             "absolute inset-0 transition-opacity duration-700",
@@ -24,12 +24,12 @@ export function HeroSection() {
           )}
         >
           <iframe
-            src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&controls=0&playlist=${VIDEO_ID}&start=0&end=30&rel=0&modestbranding=1&iv_load_policy=3`}
+            src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&rel=0&playsinline=1&playlist=${VIDEO_ID}`}
             title="Up properties hero video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             onLoad={() => setLoaded(true)}
-            className="absolute inset-0 h-full w-full scale-[1.35] object-cover"
+            className="pointer-events-none absolute left-1/2 top-1/2 h-[150%] w-[150%] -translate-x-1/2 -translate-y-1/2 scale-[1.25] border-0"
           />
         </div>
 
