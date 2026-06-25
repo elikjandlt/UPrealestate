@@ -78,14 +78,8 @@ export function HeroSection() {
           <FadeIn delay={0.2}>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/sell"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-primary transition-transform hover:scale-[1.02]"
-              >
-                {t("sellCta")}
-              </Link>
-              <Link
                 href="/listings"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-foreground/15 px-6 py-3.5 text-base font-semibold text-primary-foreground backdrop-blur transition-colors hover:bg-primary-foreground/25"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-primary transition-transform hover:scale-[1.02]"
               >
                 {t("listingsCta")}
                 <ArrowRight className="h-4 w-4" />
