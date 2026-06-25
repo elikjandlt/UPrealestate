@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import ApolloClientProvider from "@/lib/apollo/provider";
@@ -11,7 +12,14 @@ import "../globals.css";
 const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin", "cyrillic"],
-  weight: ["100", "300", "400", "500", "700"],
+  weight: ["300", "400", "500", "700", "900"],
+  display: "swap",
+});
+
+const notoSans = Noto_Sans({
+  variable: "--font-noto",
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
@@ -37,7 +45,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${roboto.variable} h-full antialiased`}
+      className={`${roboto.variable} ${notoSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>

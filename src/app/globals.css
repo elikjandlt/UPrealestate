@@ -50,23 +50,50 @@
   --color-footer-foreground: var(--footer-foreground);
   --font-sans: var(--font-roboto);
   --font-heading: var(--font-roboto);
+  --font-body: var(--font-noto);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-roboto), var(--font-noto), ui-sans-serif, system-ui, sans-serif;
   font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 500;
+  font-family: var(--font-roboto), var(--font-noto), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
 }
 
 p, span, a, li, label, input, textarea, select, button {
-  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-roboto), var(--font-noto), ui-sans-serif, system-ui, sans-serif;
+}
+
+button, .font-medium, .font-semibold {
+  letter-spacing: -0.01em;
+}
+
+.text-muted-foreground {
+  line-height: 1.6;
 }
 
 @media (prefers-reduced-motion: reduce) {
