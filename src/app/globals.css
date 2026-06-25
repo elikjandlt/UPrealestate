@@ -48,16 +48,20 @@
   --color-destructive: var(--destructive);
   --color-footer: var(--footer);
   --color-footer-foreground: var(--footer-foreground);
-  --font-sans: var(--font-roboto);
-  --font-heading: var(--font-roboto);
-  --font-body: var(--font-noto);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-inter);
+  --font-body: var(--font-inter);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+html {
+  font-size: 16px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-roboto), var(--font-noto), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.01em;
@@ -66,30 +70,47 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-roboto), var(--font-noto), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 700;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-size: clamp(2.027rem, 5vw, 3.052rem);
 }
 
 h2 {
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: clamp(1.602rem, 4vw, 2.441rem);
 }
 
 h3 {
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-size: clamp(1.424rem, 3vw, 1.953rem);
+}
+
+h4 {
+  font-size: clamp(1.266rem, 2.5vw, 1.563rem);
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 1rem;
 }
 
 p, span, a, li, label, input, textarea, select, button {
-  font-family: var(--font-roboto), var(--font-noto), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+p, li {
+  line-height: 1.6;
 }
 
 button, .font-medium, .font-semibold {
   letter-spacing: -0.01em;
+  line-height: 1.5;
 }
 
 .text-muted-foreground {
