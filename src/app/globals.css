@@ -49,7 +49,7 @@
   --color-footer: var(--footer);
   --color-footer-foreground: var(--footer-foreground);
   --font-sans: var(--font-roboto);
-  --font-heading: var(--font-vollkorn);
+  --font-heading: var(--font-roboto);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
@@ -57,11 +57,16 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-vollkorn), Georgia, serif;
-  font-weight: 700;
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+}
+
+p, span, a, li, label, input, textarea, select, button {
+  font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
 }
 
 @media (prefers-reduced-motion: reduce) {

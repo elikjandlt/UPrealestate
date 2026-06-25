@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto, Vollkorn } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import ApolloClientProvider from "@/lib/apollo/provider";
@@ -12,13 +12,6 @@ const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin", "cyrillic"],
   weight: ["100", "300", "400", "500", "700"],
-  display: "swap",
-});
-
-const vollkorn = Vollkorn({
-  variable: "--font-vollkorn",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -44,7 +37,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${roboto.variable} ${vollkorn.variable} h-full antialiased`}
+      className={`${roboto.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
