@@ -1,39 +1,58 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/motion/FadeIn";
 
-const VIDEO_ID = "qKFT4VA7elU";
+const VIDEO_URL = "https://videos.pexels.com/video-files/37694695/37694695-hd_1920_1080_30fps.mp4";
 const POSTER_URL = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80";
 
 export function HeroSection() {
   const t = useTranslations("hero");
-  const [loaded, setLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [canPlay, setCanPlay] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const attemptPlay = async () => {
+      try {
+        await video.play();
+        setCanPlay(true);
+      } catch {
+        setCanPlay(false);
+      }
+    };
+
+    if (video.readyState >= 3) {
+      attemptPlay();
+    } else {
+      video.addEventListener("canplay", attemptPlay, { once: true });
+    }
+  }, []);
 
   return (
     <section className="relative overflow-hidden bg-primary text-primary-foreground">
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div
+        <video
+          ref={videoRef}
+          src={VIDEO_URL}
+          poster={POSTER_URL}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
           className={cn(
-            "absolute inset-0 transition-opacity duration-700",
-            loaded ? "opacity-100" : "opacity-0"
+            "absolute inset-0 h-full w-full object-cover transition-opacity duration-700",
+            canPlay ? "opacity-100" : "opacity-0"
           )}
-        >
-          <iframe
-            src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&rel=0&playsinline=1&playlist=${VIDEO_ID}`}
-            title="Up properties hero video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            onLoad={() => setLoaded(true)}
-            className="pointer-events-none absolute left-1/2 top-1/2 h-[150%] w-[150%] -translate-x-1/2 -translate-y-1/2 scale-[1.25] border-0"
-          />
-        </div>
-
-        <div className={cn("absolute inset-0 transition-opacity duration-700", loaded ? "opacity-0" : "opacity-100")}>
+        />
+        <div className={cn("absolute inset-0 transition-opacity duration-700", canPlay ? "opacity-0" : "opacity-100")}>
           <Image
             src={POSTER_URL}
             alt="Up properties hero"
@@ -43,10 +62,8 @@ export function HeroSection() {
             sizes="100vw"
           />
         </div>
-
         <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/50 to-primary/30" />
       </div>
-
       <div className="relative z-10 mx-auto max-w-[1440px] px-4 py-20 lg:px-8 xl:px-[120px] lg:py-24">
         <div className="max-w-3xl">
           <FadeIn>
