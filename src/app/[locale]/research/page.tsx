@@ -47,6 +47,9 @@ export default async function ResearchPage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
+                <span className="absolute left-4 top-4 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-sm">
+                  {t("featuredBadge")}
+                </span>
               </div>
               <div className="flex flex-col justify-center p-6 lg:p-10">
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
