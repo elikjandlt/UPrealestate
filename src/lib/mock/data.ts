@@ -520,6 +520,12 @@ export const news = [
     category: "Зах зээлийн шинжилгээ",
     slug: "ub-apartment-market-2025",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+      "https://images.unsplash.com/photo-1448630360428-65456885c650?w=800&q=80",
+      "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800&q=80",
+      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&q=80",
+    ],
   },
   {
     _id: "n2",
@@ -539,6 +545,12 @@ export const news = [
     category: "Зөвлөгөө",
     slug: "5-benefits-of-using-agent",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
+      "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80",
+    ],
   },
   {
     _id: "n3",
@@ -554,6 +566,12 @@ export const news = [
     category: "Мэдээ",
     slug: "international-finance-partnership",
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80",
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
+      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
+      "https://images.unsplash.com/photo-1526304640152-d4619684e484?w=800&q=80",
+    ],
   },
   {
     _id: "n4",
@@ -569,6 +587,12 @@ export const news = [
     category: "Зээл, санхүү",
     slug: "mortgage-rate-drop-2025",
     image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800&q=80",
+      "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
+    ],
   },
   {
     _id: "n5",
@@ -584,6 +608,12 @@ export const news = [
     category: "Зах зээлийн шинжилгээ",
     slug: "khanuul-house-price-trend-2025",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+      "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80",
+    ],
   },
   {
     _id: "n6",
@@ -601,5 +631,11 @@ export const news = [
     category: "Зөвлөгөө",
     slug: "apartment-rental-tips",
     image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+    ],
   },
 ];

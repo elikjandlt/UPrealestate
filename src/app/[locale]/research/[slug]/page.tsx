@@ -67,6 +67,25 @@ export default async function ResearchDetailPage({ params }: { params: Params })
                   ))}
                 </div>
 
+                {item.gallery && item.gallery.length > 0 && (
+                  <div className="mt-10">
+                    <h3 className="text-lg font-bold text-card-foreground">{t("gallery")}</h3>
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                      {item.gallery.slice(1).map((src, idx) => (
+                        <div key={idx} className="relative aspect-video overflow-hidden rounded-xl bg-muted">
+                          <Image
+                            src={src}
+                            alt={`${item.title} ${idx + 1}`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-muted-foreground">{t("share")}:</span>
