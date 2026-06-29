@@ -53,9 +53,6 @@ export default async function ResearchPage() {
               </div>
               <div className="flex flex-col justify-center p-6 lg:p-10">
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-                    {featured.category}
-                  </span>
                   <span className="flex items-center gap-1">
                     <Calendar className="h-3.5 w-3.5" />
                     {featured.date}
