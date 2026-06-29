@@ -9,7 +9,6 @@ export default async function ResearchPage() {
   const t = await getTranslations("news");
   const items = getNews();
   const [featured, ...rest] = items;
-  const categories = Array.from(new Set(items.map((i) => i.category)));
 
   return (
     <div className="min-h-screen bg-background pb-16 lg:pb-24">
@@ -69,20 +68,6 @@ export default async function ResearchPage() {
             </Link>
           </FadeIn>
         )}
-
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-          <span className="rounded-full bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground cursor-default">
-            Бүгд
-          </span>
-          {categories.map((cat) => (
-            <span
-              key={cat}
-              className="rounded-full border border-border bg-background px-4 py-1.5 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-primary cursor-pointer"
-            >
-              {cat}
-            </span>
-          ))}
-        </div>
 
         <StaggerContainer className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {rest.map((item) => (
