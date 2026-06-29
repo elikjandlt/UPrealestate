@@ -13,14 +13,21 @@ export default async function ResearchPage() {
 
   return (
     <div className="min-h-screen bg-background pb-16 lg:pb-24">
-      <section className="border-b border-border bg-background py-12 lg:py-16">
-        <div className="mx-auto max-w-[1440px] px-4 lg:px-8 xl:px-[120px]">
+      <section className="relative flex min-h-[320px] items-center justify-center overflow-hidden md:min-h-[380px]">
+        <Image
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80"
+          alt="News hero"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative mx-auto max-w-[1440px] px-4 text-center text-white lg:px-8 xl:px-[120px]">
           <FadeIn>
-            <div className="text-center">
-              <span className="text-sm font-semibold uppercase tracking-wider text-primary">{featured?.category}</span>
-              <h1 className="mx-auto mt-3 max-w-3xl text-3xl font-bold text-foreground md:text-5xl">{t("title")}</h1>
-              <p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground md:text-lg">{t("subtitle")}</p>
-            </div>
+            <span className="text-sm font-semibold uppercase tracking-wider text-white/80">{featured?.category}</span>
+            <h1 className="mx-auto mt-3 max-w-3xl text-3xl font-bold md:text-5xl">{t("title")}</h1>
+            <p className="mx-auto mt-3 max-w-2xl text-base opacity-90 md:text-lg">{t("subtitle")}</p>
           </FadeIn>
         </div>
       </section>
