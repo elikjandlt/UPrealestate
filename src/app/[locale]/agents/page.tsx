@@ -79,12 +79,12 @@ export default async function AgentsPage() {
                 </div>
 
                 <div className="mt-4 flex flex-wrap items-center gap-3">
-                  <button
-                    type="button"
+                  <a
+                    href={`tel:${agent.mobile || agent.phone}`}
                     className="rounded-lg border border-primary px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
                   >
                     Надтай холбогдоно уу
-                  </button>
+                  </a>
                   <SocialButtons socials={agent.socials} />
                 </div>
               </div>

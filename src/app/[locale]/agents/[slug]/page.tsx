@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import { Phone, Mail, MapPin, Building2, Briefcase, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Building2, TrendingUp, Clock, Award } from "lucide-react";
 import Image from "next/image";
 import { getAgentBySlug, getProperties } from "@/lib/mock";
 import { FadeIn } from "@/components/motion/FadeIn";
@@ -19,7 +19,7 @@ export default async function AgentDetailPage({ params }: Props) {
 
   if (!agent) notFound();
 
-  const listings = getProperties().slice(0, 2);
+  const listings = getProperties().filter((p) => p.agentId === agent._id).slice(0, 3);
 
   return (
     <div className="min-h-screen bg-background py-10 lg:py-14">
@@ -76,9 +76,9 @@ export default async function AgentDetailPage({ params }: Props) {
                 </div>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                  <StatCard icon={<Briefcase className="h-4 w-4" />} label={agentsT("sold")} value={String(agent.sold)} />
+                  <StatCard icon={<TrendingUp className="h-4 w-4" />} label={agentsT("sold")} value={String(agent.sold)} />
                   <StatCard icon={<Clock className="h-4 w-4" />} label={agentsT("days")} value={`${agent.avgDays} өдөр`} />
-                  <StatCard icon={<Briefcase className="h-4 w-4" />} label={t("experience")} value={`${agent.experience} жил`} />
+                  <StatCard icon={<Award className="h-4 w-4" />} label={t("experience")} value={`${agent.experience} жил`} />
                 </div>
 
                 <div className="mt-8">
@@ -123,7 +123,7 @@ export default async function AgentDetailPage({ params }: Props) {
 
             <div className="lg:col-span-4">
               <div className="sticky top-24 rounded-2xl bg-card p-6 shadow-sm">
-                <div className="relative mx-auto h-40 w-32 overflow-hidden rounded-xl bg-muted">
+                <div className="relative mx-auto h-40 w-40 overflow-hidden rounded-full bg-muted">
                   {agent.image && (
                     <Image
                       src={agent.image}
