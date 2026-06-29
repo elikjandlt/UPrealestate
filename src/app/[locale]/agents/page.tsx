@@ -12,14 +12,29 @@ export default async function AgentsPage() {
   const agents = getAgents();
 
   return (
-    <div className="bg-muted min-h-screen py-10 lg:py-14">
-      <div className="mx-auto max-w-[1440px] px-4 lg:px-8 xl:px-[120px]">
-        <FadeIn>
-          <h1 className="text-3xl font-bold text-foreground md:text-4xl">{t("title")}</h1>
-          <p className="mt-2 max-w-2xl text-lg text-muted-foreground">{t("subtitle")}</p>
-        </FadeIn>
+    <div className="min-h-screen bg-background">
+      <section className="relative h-[220px] w-full overflow-hidden md:h-[260px]">
+        <Image
+          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80"
+          alt="Agents hero"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-primary/60" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-primary-foreground">
+          <FadeIn>
+            <h1 className="text-3xl font-bold md:text-4xl">{t("title")}</h1>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <p className="mt-2 max-w-2xl text-base opacity-90 md:text-lg">{t("subtitle")}</p>
+          </FadeIn>
+        </div>
+      </section>
 
-        <StaggerContainer className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto max-w-[1440px] px-4 py-10 lg:px-8 lg:py-14 xl:px-[120px]">
+        <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {agents.map((agent) => (
             <StaggerItem key={agent._id}>
               <Link
